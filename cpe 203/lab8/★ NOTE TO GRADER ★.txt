@@ -1,0 +1,12 @@
+When using with IntelliJ, 
+for some reason the code onnly runs when the text files are outside of the "src" file. J
+ava files inside the "src" folder while txt.file outside!
+
+
+The outside files will be overrided and the 
+drawMe.txt has to be put into the src to run the helper program.
+
+Picture / Example Reference:
+
+http://prntscr.com/hajdsu
+

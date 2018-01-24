@@ -1,0 +1,28 @@
+javac -cp .;C:/JUnit/junit-4.12.jar;C:/JUnit/hamcrest-core-1.3.jar *.java
+
+
+java -cp .;C:/JUnit/junit-4.12.jar;C:/JUnit/hamcrest-core-1.3.jar org.junit.runner.JUnitCore TestCases
+
+
+java -cp .;C:/JUnit/junit-4.12.jar;C:/JUnit/hamcrest-core-1.3.jar org.junit.runner.JUnitCore PartTwoTestCases
+
+
+from  java location.
+
+javac -cp .;C;/Users/Coby/Desktop/CS/"cpe 203"/Project3/processing-core.jar *.java
+
+java -cp .;C;/Users/Coby/Desktop/CS/"cpe 203"/Project3/processing-core.jar VirtualWorld
+
+
+javac -cp .;C;/Users/Coby/Documents/GitShit/asgn1-CobyHong/Project4/processing-core.jar *.java
+
+javac -cp .;C;/Users/Coby/Documents/GitShit/asgn1-CobyHong/Project4/processing-core.jar VirtualWorld
+
+
+
+
+
+
+javac -cp .;C;/Users/Coby/Documents/GitShit/csc-203-lab-8-CobyHong/processing-core.jar *.java
+
+javac -cp .;C;/Users/Coby/Documents/GitShit/csc-203-lab-8-CobyHong/processing-core.jar drawPoints

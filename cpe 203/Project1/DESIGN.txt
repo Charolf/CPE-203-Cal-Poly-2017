@@ -1,0 +1,219 @@
+[Coby Hong -- 9/29/2017 -- CPE 203 -- Project #1 UML]
+
+NOTE: There are some duplicates of methods in UML due to being unsure. In Functions class, those with "UNSURE" label are likely in another class. All descriptions for implementation is in here with labeling.
+
+Justification for unmoved items:
+====================================
+
+-proccessLine(): Seems to just be a process that splits a string into an array of strings with the information provided. Info is swapped and checks if the array created afterwords contains data. I still feel that this could be in WorldModel for it seems like something for building/running up the game but am unsure.
+
+-parseBackground(): This seems to create the whatever tile image needed to meet the number of properties in the background. Guess to ceate the necessary amount of background tiles. Could go in Viewport or WorldModel, but cannot since do not understand properties string.
+
+-parseMiner(): This just seems to add a miner into a location in the game. Felt overall purpose could fit into multiple classes so kept in Function since felt too broad (could be Event, Entity, Action...). As well it returned the length of properties so maybe info on newly added entity?
+
+-parseObstacle(): Similar to parseMiner where it was simply to put the stated object into game location. Could fit multiple classes. Return properties for possible addition of entity into game?
+
++parseOre(): Similar other parse functions where it was simply to put the stated object into game location. Could fit multiple classes. Return properties for possible addition of entity into game?
+
++parseSmith():  Similar other parse functions where it was simply to put the stated object into game location. Could fit multiple classes. Return properties for possible addition of entity into game?
+
++parseVein():  Similar other parse functions where it was simply to put the stated object into game location. Could fit multiple classes. Return properties for possible addition of entity into game?
+
++load() - seems to load whole game??? - put into WorldModel class just in case.
+
+----------------------------
++createBlacksmith(): Entity               
++createMinerFull(): Entity                  
++createMinerNotFull(): Entity            
++createObstacle(): Entity                  
++createOre(): Entity                         
++createOreBlob(): Entity                   
++createVein(): Entity
+---------------------------      --> Following create functions reasoning in "Event items" section. Unsure on these functions placement.                 
+
+
+Action items:
+====================================
++executeAction() - Actions Attribute to cause function to occur upon Event Scheduled.   
+                      
++executeAnimationAction() - Action attribute and name of method suggest creation of animation for action.       
+        
++executeActivityAction()  - Action attribute and creates action/change in Miners with interation to ore.       
+
+
+Entity items:
+====================================
+
+getCurrentImage(): Took in an Object entity. So must be Entity based.
+
+getAnimationPeriod(): Took in Entity and returned property of it. Had "entity.animationPeriod"; Entity based.
+
+nextImage(): Takes in Entity and seems to just perform calculation for image index. Its implementations all have "entity.[func]".
+
+executeMinerFullActivity(): Name suggest changing status of entity miner. attributes have implementations of "entity.[func]".
+
+executeMinerNotFullActivity(): Same to executeMinerFullActivity().
+
++executeOreActivity(): Name suggest change in entity properties. Function contains "entity.[func]" in most.
+
++executeOreBlobActivity() : Name suggest change in entity properties. Function contains "entity.[func]" in most. 
+            
++executeQuakeActivity() : Name suggest change in entity properties. Function contains "entity.[func]" in most.  
+                
++executeVeinActivity() : Name suggest change in entity properties. Function contains "entity.[func]" in most.  
+
++transformNotFull(): boolean - Functions inside use "entity.[func]" in almost all parts.          
+
++transformFull() - Functions inside use "entity.[func]" in almost all parts.            
+                   
++moveToNotFull(): boolean -Contains remove eneity function and attributews mainly focused on entity.   
+           
++moveToFull(): boolean - dealing with properties of miner so assume entity.
+                     
++moveToOreBlob(): boolean - dealing with properties of blob so assume entity.  
+          
++nextPositionMiner(): Point - Seems to deal with movement of miner so entity focused.  
+           
++nextPositionOreBlob(): Point  -Seems to deal with movement of Blob so entity focused.  
+       
++createAnimationAction(): Action -Though returning an action, takes in only entity and int.  
+ 
++createActivityAction(): Action -Though returning an action, takes in only entity and int.
+
++nearestEntity(): Optional<Entity> -Takes in list of entities and positioning so entity focused.    
+
+       
+Event items:
+====================================
+
++createBlacksmith(): Entity - Though creating entity, seems like an event/occerence. Attributes do not really match anything in mind. But name suggest an Event. 
+           
++createMinerFull(): Entity -  Though creating entity, seems like an event/occerence. Attributes do not really match anything in mind. But name suggest an Event.  
+               
++createMinerNotFull(): Entity - Though creating entity, seems like an event/occerence. Attributes do not really match anything in mind. But name suggest an Event.  
+        
++createObstacle(): Entity -  Though creating entity, seems like an event/occerence. Attributes do not really match anything in mind. But name suggest an Event.  
+               
++createOre(): Entity -  Though creating entity, seems like an event/occerence. Attributes do not really match anything in mind. But name suggest an Event.  
+                         
++createOreBlob(): Entity -  Though creating entity, seems like an event/occerence. Attributes do not really match anything in mind. But name suggest an Event.  
+                  
++createVein(): Entity - Though creating entity, seems like an event/occerence. Attributes do not really match anything in mind. But name suggest an Event.                      
+
+
+EventComparator items:
+=====================================
+
++compare(): int -Already included
+
++clamp() - Just an int and did a math function.
+
+
+EventScheduler items:
+=====================================
+
++scheduleEvent() - First attribute is EventScheduler. Functions innside eal with time and creating event. Name gives off status as well.
+                              
++unscheduleAllEvents() - First attribute is EventScheduler. Functions innside eal with time and creating event. Name gives off status as well.
+                     
++removePendingEvent() - Removes event in list. Schedule list of events.
+                    
++updateOnTime() - Deals with time which I primarily relate to scheduling with timing of events.
+
+
+ImageStore items:
+=====================================
+
++getImageList(): List<PImage> - returns list of images with key and where stored. Relate list of images with storage.     
+
++loadImages() - Loading images from attribute ImageStore.
+
++processImageLine() - Some function dealinng with creation of pixels in my belief could be either Background, Viewport, as well.  
+                  
++setAlpha() - Updates pixels? Unsure of purpose to this function. Image related so put into this class.
+
++getImages(): List<PImage> - returns list of images? Similar to getImageList???                                
+      
+
+Point items:
+=====================================
+
++toString(): String - Included
+
++equals(): boolean - Included
+
++adjacent(): boolean - Test if two POINTS are adjacent. Deals with only points in attributes.    
+                    
++distanceSquared(): int - In the name of the function. Deals with only points in attributes.  
+             
++createQuake(): Seems to use poinnt to create a quake at desired location using Point to place it.
+
+
+Viewport items:
+=====================================
+
++shift() - Takes in viewport as primary attribute. Other are int.  
+                          
++contains(): Takes in viewport as primary attribute. Could deal with Point too.
+
++viewportToWorld(): Point - Takes in viewport as primary attribute. Other are int.  
+                   
++worldToViewport(): Point - Takes in viewport as primary attribute. Other are int.          
+     
+
+WorldModel items:
+=====================================
+
++findOpenAround(): Optional<Point> - Deals with positioninng and ores. WorldModel attribute.
+
++tryAddEntity() - Tries to add entity into the world. Deals with general creation/rendering of world.  
+                          
++withinBounds(): boolean - Bound testing associated usually with WorldModel topic.   
+              
++isOccupied(): boolean - Test if space is occupied. Suggest WorldModel relation.  
+                   
++findNearest(): Optional<Entity> - Deals with entity and its positioning in the WorldModel. 
+   
++addEntity() - Adding Entity to WorldModel. Believe to be WorldModel related.
+                                 
++moveEntity() - Moving entity in space of WorldModel.         
+                       
++removeEntity() - Deleting entity in space relation to WorldModel.   
+                        
++removeEntityAt() - Checking position of Entity in WorldModel and removing it?  
+                      
++getBackgroundImage(): Optional<PImage> - returning image. WorldModel main attribute.
+
++setBackground() - Could be Background class as well.            
+                  
++getOccupant(): Optional<Entity> - WorldModel attribute.
+
++getOccupancyCell(): Entity - WorldModel attribute.  
+           
++setOccupancyCell() - WorldModel attribute.  
+                     
++getBackgroundCell(): Background - WorldModel attribute. 
+ 
++setBackgroundCell(): Could be Background.
+
++load() - seems to load whole game???
+
+
+Background items: 
+=====================================                                                            
+
++setBackground() - Could be Background class as well. Based on attribute.
+
++setBackgroundCell(): Could be Background. Based on attribute.
+
+
+WorldView items:
+=====================================
+
++shiftView() - One of few function with WorldView attribute. Code inside method use either "view.world" or "view.viewport".
+                               
++drawBackground() - Single attribute being WorldView.
+                          
++drawEntities() - Single attribute being WorldView. 
+                          
++drawViewport() -  Single attribute being WorldView.

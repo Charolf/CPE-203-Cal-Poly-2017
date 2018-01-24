@@ -1,0 +1,56 @@
+Functions used by all:
+
+-getPosition();
+-setPosition();
+-getid();
+-getimages();
+
+
+
+
+
+
+Used By Ore, Vein: 
+
+-getActionPeriod();
+-executeAcvitiy NOT DID YET.
+-scheduleActions (Activity only).
+
+
+
+
+
+
+
+
+Miners: IGNORED FOR NOW.
+
+-transformFull
+
+
+
+
+
+
+
+Miners and OreBlob
+
+-NextPosition MISSING ONE.
+-Movetofull MEH.
+-findnearest GOT ALL
+-nearestEntity DONE.
+
+
+
+
+
+
+
+DONES.
+Ore_blob, quake, miner_notfull, miner_full
+
+-getanimationPeriod
+-ScheduleActions (Animation & Action)
+-nextImage
+
+
